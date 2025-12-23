@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GearCollector</title>
+  <meta name="description" content="GearCollector – Twitch & Discord Hub. Minimal. Fast." />
+  <meta name="theme-color" content="#0a0a12" />
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="/assets/css/templatemo-nexaverse.css" />
+  <!-- Overrides -->
+  <link rel="stylesheet" href="/assets/css/custom.css" />
+</head>
+
+<body>
+  <!-- Ambient Background -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Loading -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-ring"></div>
+    <div class="loading-text">GEARCOLLECTOR</div>
+  </div>
+
+  <main class="container" id="top">
+    <header class="header">
+      <div class="logo" aria-hidden="true">
+        <!-- Minimal G Icon -->
+        <svg viewBox="0 0 64 64" fill="none">
+          <path d="M52 32c0 11.046-8.954 20-20 20S12 43.046 12 32 20.954 12 32 12c5.4 0 10.3 2.14 13.93 5.62"
+            stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M52 32h-14" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="g" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+              <stop stop-color="var(--primary)"/>
+              <stop offset="1" stop-color="var(--secondary)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <h1 class="brand-name">GEARCOLLECTOR</h1>
+      <p class="tagline">TARKOV · FPS · BUILDS</p>
+    </header>
+
+    <!-- Minimal Menu -->
+    <section class="menu-grid" aria-label="Links">
+      <a class="menu-item initial-load"
+         href="https://twitch.tv/gearcollector"
+         target="_blank" rel="noreferrer">
+        <div class="menu-badge">TV</div>
+        <div class="menu-title">Twitch</div>
+      </a>
+
+      <a class="menu-item initial-load"
+         href="https://discord.gg/MhqRKXhdSK"
+         target="_blank" rel="noreferrer">
+        <div class="menu-badge">DC</div>
+        <div class="menu-title">Discord</div>
+      </a>
+
+      <a class="menu-item initial-load menu-item--ghost"
+         href="#live">
+        <div class="menu-badge">●</div>
+        <div class="menu-title">Live</div>
+      </a>
+    </section>
+
+    <!-- Live Embed (No API) -->
+    <section id="live" class="glass-card live-card">
+      <div class="section-header">
+        <h2 class="section-title live-title">Live</h2>
+        <p class="section-subtitle">Wenn ich online bin, läuft der Stream hier.</p>
+      </div>
+
+      <div class="live-embed">
+        <iframe
+          src="https://player.twitch.tv/?channel=gearcollector&parent=gearcollector.pages.dev"
+          allowfullscreen="true"
+          scrolling="no"
+          frameborder="0">
+        </iframe>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Fanprojekt. Keine offizielle Battlestate Games Seite ·
+        <a href="https://templatemo.com" target="_blank" rel="noreferrer">Template by TemplateMo</a>
+      </p>
+    </footer>
+  </main>
+
+  <!-- JS (passend zu deinem Repo: /js/app.js) -->
+  <script src="/js/app.js"></script>
+</body>
+</html>
