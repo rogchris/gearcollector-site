@@ -1,0 +1,6 @@
+name = "gearcollector-news"
+main = "worker.js"
+compatibility_date = "2025-12-26"
+
+# Optional: If you deploy via CLI, this helps.
+# You can also ignore wrangler entirely and paste worker.js in the Dashboard.
