@@ -3,101 +3,280 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GearCollector</title>
-  <meta name="description" content="GearCollector – Twitch & Discord Hub. Minimal. Fast." />
-  <meta name="theme-color" content="#0a0a12" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b0f18" />
 
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="/assets/css/templatemo-nexaverse.css" />
-  <!-- Overrides -->
-  <link rel="stylesheet" href="/assets/css/custom.css" />
+  <title>Gearcollector — Clips, Tarkov News, Socials</title>
+  <meta name="description" content="Gearcollector: Twitch Clips, Tarkov News und Links zu allen Socials. Dark, clean, schnell." />
+  <link rel="canonical" href="https://gearcollector.de/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Gearcollector" />
+  <meta property="og:title" content="Gearcollector — Clips, Tarkov News, Socials" />
+  <meta property="og:description" content="Twitch Clips, Tarkov News und Socials in einem cleanen Hub." />
+  <meta property="og:url" content="https://gearcollector.de/" />
+  <meta property="og:image" content="https://gearcollector.de/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gearcollector — Clips, Tarkov News, Socials" />
+  <meta name="twitter:description" content="Twitch Clips, Tarkov News und Socials in einem cleanen Hub." />
+  <meta name="twitter:image" content="https://gearcollector.de/assets/og-image.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23A7B5FF' d='M4 7.5A3.5 3.5 0 0 1 7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9Zm4.25 8.75a.75.75 0 0 0 .75.75h6a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0-.75.75Zm0-3.5a.75.75 0 0 0 .75.75h8a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0-.75.75Zm0-3.5A.75.75 0 0 0 9 10h8a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0-.75.75Z'/%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script defer src="/assets/app.js"></script>
 </head>
 
 <body>
-  <!-- Ambient Background -->
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-  <div class="grid-overlay" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <!-- Loading -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loader-ring"></div>
-    <div class="loading-text">GEARCOLLECTOR</div>
-  </div>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Gearcollector Startseite">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9A3.5 3.5 0 0 1 7.5 4Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8.5 9h9M8.5 12.5h9M8.5 16h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Gearcollector</span>
+          <span class="brand-sub">Clips • Tarkov • Builds</span>
+        </span>
+      </a>
 
-  <main class="container" id="top">
-    <header class="header">
-      <div class="logo" aria-hidden="true">
-        <!-- Minimal G Icon -->
-        <svg viewBox="0 0 64 64" fill="none">
-          <path d="M52 32c0 11.046-8.954 20-20 20S12 43.046 12 32 20.954 12 32 12c5.4 0 10.3 2.14 13.93 5.62"
-            stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-          <path d="M52 32h-14" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-          <defs>
-            <linearGradient id="g" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
-              <stop stop-color="var(--primary)"/>
-              <stop offset="1" stop-color="var(--secondary)"/>
-            </linearGradient>
-          </defs>
-        </svg>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav-link" href="#socials">Socials</a>
+        <a class="nav-link" href="#clips">Clips</a>
+        <a class="nav-link" href="#news">Tarkov News</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--ghost" href="https://discord.gg/DEIN_INVITE" target="_blank" rel="noopener noreferrer">
+          <span class="btn-ico" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M8.5 8.8c1-.7 2.2-1.1 3.5-1.1s2.5.4 3.5 1.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M8.3 15.4c1 .7 2.3 1.1 3.7 1.1s2.7-.4 3.7-1.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M7.2 6.6A14.6 14.6 0 0 1 12 5.8c1.6 0 3.2.3 4.8.8M7.2 6.6c-1.1 2-1.7 4.2-1.7 6.4 0 2 .4 4 1.2 5.8.2.5.7.8 1.2.8h1.4l.5-1.1M7.2 6.6l2.1 1.2M16.8 6.6c1.1 2 1.7 4.2 1.7 6.4 0 2-.4 4-1.2 5.8-.2.5-.7.8-1.2.8h-1.4l-.5-1.1M16.8 6.6l-2.1 1.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.2 12.3h.01M14.8 12.3h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          Discord
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy" data-reveal>
+          <p class="kicker">Gearcollector Hub</p>
+          <h1 id="hero-title">
+            Dark. Clean. Schnell.
+            <span class="accent">Clips</span> & <span class="accent">Tarkov News</span> an einem Ort.
+          </h1>
+          <p class="lead">
+            Keine Popups, kein Drama. Nur Content, Links, Updates — und ein sauberer Vibe.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn--primary" href="#clips">
+              <span class="btn-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M10 8.5v7l6-3.5-6-3.5Z" fill="currentColor"/>
+                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
+              Clips
+            </a>
+            <a class="btn btn--ghost" href="#news">News</a>
+            <a class="btn btn--ghost" href="https://discord.gg/DEIN_INVITE" target="_blank" rel="noopener noreferrer">Join Discord</a>
+          </div>
+
+          <div class="hero-meta">
+            <span class="pill">Mobile-first</span>
+            <span class="pill">Vanilla</span>
+            <span class="pill">Cloudflare Pages</span>
+          </div>
+        </div>
+
+        <div class="hero-panel" data-reveal>
+          <div class="panel-card">
+            <div class="panel-top">
+              <span class="panel-dot"></span><span class="panel-dot"></span><span class="panel-dot"></span>
+              <span class="panel-title">Status</span>
+            </div>
+            <div class="panel-body">
+              <div class="stat">
+                <span class="stat-label">Clips</span>
+                <span class="stat-value" id="stat-clips">—</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">News (DE / EN)</span>
+                <span class="stat-value" id="stat-news">—</span>
+              </div>
+              <div class="divider"></div>
+              <p class="micro">
+                Twitch-Embeds brauchen <code>parent</code>. Lokal ok mit <code>localhost</code>.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h1 class="brand-name">GEARCOLLECTOR</h1>
-      <p class="tagline">TARKOV · FPS · BUILDS</p>
-    </header>
-
-    <!-- Minimal Menu -->
-    <section class="menu-grid" aria-label="Links">
-      <a class="menu-item initial-load"
-         href="https://twitch.tv/gearcollector"
-         target="_blank" rel="noreferrer">
-        <div class="menu-badge">TV</div>
-        <div class="menu-title">Twitch</div>
-      </a>
-
-      <a class="menu-item initial-load"
-         href="https://discord.gg/MhqRKXhdSK"
-         target="_blank" rel="noreferrer">
-        <div class="menu-badge">DC</div>
-        <div class="menu-title">Discord</div>
-      </a>
-
-      <a class="menu-item initial-load menu-item--ghost"
-         href="#live">
-        <div class="menu-badge">●</div>
-        <div class="menu-title">Live</div>
-      </a>
+      <div class="hero-glow" aria-hidden="true"></div>
     </section>
 
-    <!-- Live Embed (No API) -->
-    <section id="live" class="glass-card live-card">
-      <div class="section-header">
-        <h2 class="section-title live-title">Live</h2>
-        <p class="section-subtitle">Wenn ich online bin, läuft der Stream hier.</p>
-      </div>
+    <section class="section" id="socials" aria-labelledby="socials-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 id="socials-title">Socials</h2>
+          <p class="muted">Alles, wo Gearcollector rumläuft.</p>
+        </div>
 
-      <div class="live-embed">
-        <iframe
-          src="https://player.twitch.tv/?channel=gearcollector&parent=gearcollector.pages.dev"
-          allowfullscreen="true"
-          scrolling="no"
-          frameborder="0">
-        </iframe>
+        <div class="grid socials" data-reveal>
+          <a class="card card--link" href="https://twitch.tv/gearcollector" target="_blank" rel="noopener noreferrer">
+            <div class="card-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M6 4h15v10l-4 4h-4l-2 2H9v-2H6V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M10 8v5M14 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">Twitch</div>
+              <div class="card-sub">Live, VODs, Clips</div>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="card card--link" href="https://instagram.com/DEIN_HANDLE" target="_blank" rel="noopener noreferrer">
+            <div class="card-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M17.6 6.4h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">Instagram</div>
+              <div class="card-sub">Shots, Gear, IRL</div>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="card card--link" href="https://tiktok.com/@DEIN_HANDLE" target="_blank" rel="noopener noreferrer">
+            <div class="card-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M14 4v10.2a3.8 3.8 0 1 1-2.6-3.6V7.3c1.4 1.2 3.2 1.9 5.1 1.9V7.4c-1.2 0-2.3-.5-3.1-1.2-.7-.7-1.2-1.7-1.4-2.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">TikTok</div>
+              <div class="card-sub">Shorts, Highlights</div>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="card card--link" href="https://youtube.com/@DEIN_HANDLE" target="_blank" rel="noopener noreferrer">
+            <div class="card-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M21 12a3 3 0 0 0-2-2.8C17.3 8.6 12 8.6 12 8.6s-5.3 0-7 0.6A3 3 0 0 0 3 12a3 3 0 0 0 2 2.8c1.7 0.6 7 0.6 7 0.6s5.3 0 7-0.6A3 3 0 0 0 21 12Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M11 10.7v2.6l2.4-1.3L11 10.7Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">YouTube</div>
+              <div class="card-sub">VOD Cuts, Guides</div>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="card card--link" href="https://discord.gg/DEIN_INVITE" target="_blank" rel="noopener noreferrer">
+            <div class="card-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M8.5 8.8c1-.7 2.2-1.1 3.5-1.1s2.5.4 3.5 1.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M7.2 6.6A14.6 14.6 0 0 1 12 5.8c1.6 0 3.2.3 4.8.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M7.2 6.6c-1.1 2-1.7 4.2-1.7 6.4 0 2 .4 4 1.2 5.8.2.5.7.8 1.2.8h1.4l.5-1.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.8 6.6c1.1 2 1.7 4.2 1.7 6.4 0 2-.4 4-1.2 5.8-.2.5-.7.8-1.2.8h-1.4l-.5-1.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.2 12.3h.01M14.8 12.3h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">Discord</div>
+              <div class="card-sub">Squad, Alerts, Drops</div>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <p>
-        Fanprojekt. Keine offizielle Battlestate Games Seite ·
-        <a href="https://templatemo.com" target="_blank" rel="noreferrer">Template by TemplateMo</a>
-      </p>
-    </footer>
+    <section class="section" id="clips" aria-labelledby="clips-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 id="clips-title">Twitch Clips</h2>
+          <p class="muted">IDs pflegst du in <code>assets/app.js</code>.</p>
+        </div>
+
+        <div id="clips-grid" class="grid clips" aria-live="polite"></div>
+
+        <noscript>
+          <p class="muted container">JavaScript ist deaktiviert — Clips/News werden nicht gerendert.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section" id="news" aria-labelledby="news-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 id="news-title">Tarkov News</h2>
+          <p class="muted">Automatisch via Worker + RSS. Tabs: DE / EN.</p>
+        </div>
+
+        <!-- Tabs (accessible) -->
+        <div class="tabs" role="tablist" aria-label="Tarkov News Sprache" data-reveal>
+          <button class="tab" role="tab" id="tab-news-de" aria-selected="true" aria-controls="panel-news-de" tabindex="0">
+            DE
+          </button>
+          <button class="tab" role="tab" id="tab-news-en" aria-selected="false" aria-controls="panel-news-en" tabindex="-1">
+            EN
+          </button>
+        </div>
+
+        <!-- Panels -->
+        <div id="panel-news-de" class="tab-panel is-active" role="tabpanel" aria-labelledby="tab-news-de">
+          <div id="news-grid-de" class="grid news" aria-live="polite"></div>
+        </div>
+
+        <div id="panel-news-en" class="tab-panel" role="tabpanel" aria-labelledby="tab-news-en" hidden>
+          <div id="news-grid-en" class="grid news" aria-live="polite"></div>
+        </div>
+
+        <div class="note" data-reveal>
+          <p class="micro">
+            <strong>Hinweis:</strong> Inoffizieller Fan-Hub. Escape from Tarkov ist Eigentum der jeweiligen Rechteinhaber.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- JS (passend zu deinem Repo: /js/app.js) -->
-  <script src="/js/app.js"></script>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">Gearcollector</span>
+        <span class="footer-muted">© <span id="year"></span> — All gas, no clutter.</span>
+      </div>
+      <div class="footer-right">
+        <a class="footer-link" href="#socials">Socials</a>
+        <a class="footer-link" href="#clips">Clips</a>
+        <a class="footer-link" href="#news">News</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
